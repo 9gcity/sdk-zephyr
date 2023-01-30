@@ -58,3 +58,10 @@ ignore-merge-commits=false
 # By specifying this rule, developers can only change the file when they explicitly reference
 # it in the commit message.
 #files=gitlint/rules.py,README.md
+
+[body-match-regex]
+# Regex that the commit-msg body should contain. It points to the issue that prompted 
+# the commit. The format of this inclusion should be "Ref: <project>-xxxx". This is 
+# used to track changes to the codebase and have a reference to the origins of the
+# proposed changes. A workaround can be used by specifying "Ref: NONE".
+regex=Ref:( ?)((NONE|((N|n)one))|((.+)-([0-9]+))
